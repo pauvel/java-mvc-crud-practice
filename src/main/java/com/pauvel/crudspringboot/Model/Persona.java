@@ -1,6 +1,17 @@
 package com.pauvel.crudspringboot.Model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table( name = "persona")
 public class Persona {
+
+    @Id
+    @GeneratedValue( strategy = GenerationType.IDENTITY )
     private int id;
     private String name;
     private String telefono;
@@ -19,18 +30,16 @@ public class Persona {
         this.name = name;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return this.telefono;
     }
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
-    
-
-    public Persona(int id, String name, String telefono) {
-        this.id = id;
-        this.name = name;
-        this.telefono = telefono;
+    public Persona() {
+        // this.id = id;
+        // this.name = name;
+        // this.telefono = telefono;
     }
 }
