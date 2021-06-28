@@ -29,8 +29,14 @@ public class PersonaService implements IPersonaService{
 
     @Override
     public int save(Persona p) {
-        // TODO Auto-generated method stub
-        return 0;
+        int response = 0;
+        Persona persona = data.save(p);
+
+        if(!persona.equals(null)){
+            response = 1;
+        }
+
+        return response;
     }
 
     @Override

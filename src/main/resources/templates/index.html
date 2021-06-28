@@ -9,20 +9,23 @@
 <body>
 
     <div class="container mt-4">
+
+        <a th:href="@{/new}" class="btn btn-primary">Nuevo</a>
+
         <table class="table">
             <thead>
                 <tr>
                     <td>ID</td>
-                    <td>NOMBRES</td>
+                    <td>NOMBRE</td>
                     <td>TELEFONO</td>
                     <td>ACCIONES</td>
                 </tr>
             </thead>
             <tbody>
                 <tr th:each="persona:${personas}">
-                    <td th:text="${persona.id}"></td>
-                    <td th:text="${persona.name}"></td>
-                    <td th:text="${persona.telefono}"></td>
+                    <td th:text="${persona.id}">Person identifier</td>
+                    <td th:text="${persona.name}">Person name</td>
+                    <td th:text="${persona.telefono}">Person phone number</td>
                     <td>
                         <a class="btn btn-warning">Editar</a>
                         <a class="btn btn-danger">Eliminar</a>
