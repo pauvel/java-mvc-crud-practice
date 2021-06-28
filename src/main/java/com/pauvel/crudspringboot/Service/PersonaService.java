@@ -40,8 +40,7 @@ public class PersonaService implements IPersonaService{
 
     @Override
     public void delete(int id) {
-        // TODO Auto-generated method stub
-        
+        this.data.deleteById(id);
     }
     
 }
