@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import com.pauvel.crudspringboot.Helpers.ConfigHelper;
 import com.pauvel.crudspringboot.InterfaceService.IPersonaService;
 import com.pauvel.crudspringboot.Model.Persona;
 
@@ -58,6 +59,17 @@ public class Controlador {
     public String delete(@PathVariable int id){
         this.service.delete(id);
         return "redirect:/listar";
+    }
+
+    @GetMapping("/properties")
+    public String getProps(){
+        ConfigHelper cnf = new ConfigHelper("ES");
+        Map<String, String> props = cnf.getProperties();
+
+        String test = props.get("test");
+
+
+        return "index";
     }
     
 }
