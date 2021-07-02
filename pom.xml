@@ -44,7 +44,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 
@@ -53,6 +53,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludeDevtools>true</excludeDevtools>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

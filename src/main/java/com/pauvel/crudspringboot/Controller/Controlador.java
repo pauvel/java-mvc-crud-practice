@@ -63,11 +63,8 @@ public class Controlador {
 
     @GetMapping("/properties")
     public String getProps(){
-        ConfigHelper cnf = new ConfigHelper("ES");
-        Map<String, String> props = cnf.getProperties();
-
-        String test = props.get("test");
-
+        // ConfigHelper cnf = new ConfigHelper("ES");
+        // Map<String, String> props = cnf.getProperties();
 
         return "index";
     }
