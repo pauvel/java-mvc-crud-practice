@@ -1,10 +1,3 @@
-// const deleteButton = document.querySelector("#deleteButton");
-// console.log(deleteButton);
-
-// deleteButton.addEventListener('click', function(target){
-//     console.warn('CLICKED')
-// });
-
 function eliminar({id, name}) {
     swal({
         title: "Are you sure?",
