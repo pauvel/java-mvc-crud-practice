@@ -24,7 +24,8 @@ public class ConfigHelper{
     }
 
     private void setProps(String lang) throws IOException{
-        Resource resource = new ClassPathResource("validation.properties"+"_"+lang);
+        // Validate if lang exists in validation properties.
+        Resource resource = new ClassPathResource("validation"+"_"+lang+".properties");
             Properties loadedProperties = PropertiesLoaderUtils.loadProperties(resource);
             loadedProperties.forEach((key, value) -> {
                 properties.put(key.toString(), value.toString());
