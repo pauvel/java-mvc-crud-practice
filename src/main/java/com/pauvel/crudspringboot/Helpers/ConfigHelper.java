@@ -11,8 +11,13 @@ import org.springframework.core.io.support.PropertiesLoaderUtils;
 public class ConfigHelper{
     
     private Map<String, String> properties = new HashMap<>();
+
     public Map<String, String> getProperties() {
         return this.properties;
+    }
+
+    public String getPropertyValue(String key) {
+        return this.properties.get(key);
     }
 
     public ConfigHelper(String lang){

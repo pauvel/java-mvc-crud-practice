@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Properties</title>
+    <script type="text/javascript"></script>
+</head>
+
+<body>
+    <h1>Properties in validation.properties</h1>
+    <ul th:if>
+        <li th:each="prop:${props}">
+            <span th:text="${prop}"></span>
+        </li>
+    </ul>
+</body>
+
+</html>

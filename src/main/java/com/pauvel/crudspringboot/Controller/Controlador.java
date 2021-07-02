@@ -1,8 +1,10 @@
 package com.pauvel.crudspringboot.Controller;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
+import com.pauvel.crudspringboot.Helpers.ConfigHelper;
 import com.pauvel.crudspringboot.InterfaceService.IPersonaService;
 import com.pauvel.crudspringboot.Model.Persona;
 
@@ -56,11 +58,20 @@ public class Controlador {
     }
 
     @GetMapping("/properties")
-    public String getProps(){
-        // ConfigHelper cnf = new ConfigHelper("ES");
-        // Map<String, String> props = cnf.getProperties();
+    public String getProps(Model model){
+        ConfigHelper cnf = new ConfigHelper("ES");
+        Map<String, String> props = cnf.getProperties();
+        model.addAttribute("props", props);
+        return "properties";
+    }
 
-        return "index";
+    @GetMapping("/properties/{key}")
+    public String getProps(Model model, @PathVariable String key) {
+        ConfigHelper cnf = new ConfigHelper("ES");
+        String prop = cnf.getPropertyValue(key);
+        model.addAttribute("prop", prop);
+        model.addAttribute("searchedProp", key);
+        return "property";
     }
     
 }
