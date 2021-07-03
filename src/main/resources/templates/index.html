@@ -12,7 +12,7 @@
 
         <a th:href="@{/new}" class="btn btn-primary">Nuevo</a>
 
-        <table class="table">
+        <table name="users" class="table">
             <thead>
                 <tr>
                     <td>ID</td>
@@ -23,12 +23,13 @@
             </thead>
             <tbody>
                 <tr th:each="persona:${personas}">
-                    <td th:text="${persona.id}">Person identifier</td>
-                    <td th:text="${persona.name}">Person name</td>
+                    <td name="personId" th:text="${persona.id}">Person identifier</td>
+                    <td name="personName" th:text="${persona.name}">Person name</td>
                     <td th:text="${persona.telefono}">Person phone number</td>
                     <td>
+                        <!-- <a th:onclick="eliminarPersona([[${persona}]])" class="btn btn-danger">Eliminar</a> -->
                         <a th:href="@{/editar/}+${persona.id}" class="btn btn-warning">Editar</a>
-                        <a th:onclick="eliminar([[${persona}]])" class="btn btn-danger">Eliminar</a>
+                        <a name="deleteButton" class="btn btn-danger">Eliminar</a>
                     </td>
                 </tr>
             </tbody>
@@ -37,7 +38,7 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script th:src="@{sweetalert.min.js}"></script>
-    <script th:src="@{alerts/index.js}"></script>
+    <script type="module" th:src="@{alerts/index.js}"></script>
 
 </body>
 
