@@ -20,17 +20,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping
 public class Controlador {
-
+    
     @Autowired
     private IPersonaService service;
+    
+    @GetMapping("/")
+    public String home(Model model){
+        return "index";
+    }
 
     @GetMapping("/listar")
     public String listar(Model model){
         List<Persona> personas = service.listar();
         model.addAttribute("personas", personas);
 
-        return "index";
+        return "listar";
     }
+
 
     @GetMapping("/new")
     public String agregar(Model model){

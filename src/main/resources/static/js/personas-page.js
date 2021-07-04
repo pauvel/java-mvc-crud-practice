@@ -1,18 +1,29 @@
 import { eliminarPersona } from '../alerts/personas/deleting.js';
 import { typeErrorAlert } from '../alerts/exceptions/typeExceptions.js';
 
+
 const deleteUserButtons = document.querySelectorAll('table[name="users"] td a[name="deleteButton"]');
+const dddd = document.querySelector('#pinPon');
 
 /**
- * Load events for /listar pages.
+ * Load events for /listar page.
  */
 const events = () => {
+
+    if(deleteUserButtons === typeof(undefined)  || deleteUserButtons === null){
+        typeErrorAlert({
+            title: 'Oops!..',
+            text: 'Algo salio mal y no se pudo leer la informacion de la tabla.'
+        });
+        return;
+    }
 
     if(deleteUserButtons.length === 0){
         typeErrorAlert({
             title: 'Oops!..',
-            text: 'No se pudo encontrar ningun boton que lleve por nombre "deleteButton" que se encuentre en la tabla "users".'
+            text: 'No hay usuarios existentes.'
         });
+        return;
     }
 
     console.log('%c Botónes DELETE en la tabla:', 'font-size: large; color: red;')
@@ -63,10 +74,10 @@ const events = () => {
 /**
  * Initialize personas-page.js module.
  */
-const init = () => {
+const loadPersonasPage = () => {
     events();
 }
 
 export{
-    init,
+    loadPersonasPage,
 }
