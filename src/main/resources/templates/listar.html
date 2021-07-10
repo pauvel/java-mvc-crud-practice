@@ -10,7 +10,7 @@
 
     <div class="container mt-4">
 
-        <a th:href="@{/new}" class="btn btn-primary">Nuevo</a>
+        <a th:href="@{/new}" class="btn btn-primary">[[#{app.boton.nuevo}]]</a>
 
         <table name="users" class="table">
             <thead>
@@ -28,8 +28,8 @@
                     <td th:text="${persona.telefono}">Person phone number</td>
                     <td>
                         <!-- <a th:onclick="eliminarPersona([[${persona}]])" class="btn btn-danger">Eliminar</a> -->
-                        <a th:href="@{/editar/}+${persona.id}" class="btn btn-warning">Editar</a>
-                        <a name="deleteButton" class="btn btn-danger">Eliminar</a>
+                        <a th:href="@{/editar/}+${persona.id}" class="btn btn-warning">[[#{app.boton.editar}]]</a>
+                        <a name="deleteButton" class="btn btn-danger">[[#{app.boton.eliminar}]]</a>
                     </td>
                 </tr>
             </tbody>

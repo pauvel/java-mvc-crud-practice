@@ -50,8 +50,9 @@ public class Controlador {
         String langCode = currentLocale.getLanguage();
         String langName = currentLocale.getDisplayLanguage();
 
-        System.out.println(countryCode +": "+ countryName);
-        System.out.println(langCode +": "+ langName);
+        // System.out.println(countryCode +": "+ countryName);
+        // System.out.println(langCode +": "+ langName);
+        System.out.println(request.getParameter("lang"));
 
         List<Persona> personas = service.listar();
         model.addAttribute("personas", personas);
