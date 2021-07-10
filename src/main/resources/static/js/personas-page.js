@@ -3,7 +3,6 @@ import { typeErrorAlert } from '../alerts/exceptions/typeExceptions.js';
 
 
 const deleteUserButtons = document.querySelectorAll('table[name="users"] td a[name="deleteButton"]');
-const dddd = document.querySelector('#pinPon');
 
 /**
  * Load events for /listar page.
